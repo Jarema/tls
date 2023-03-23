@@ -1,14 +1,14 @@
+use async_nats_tokio_rustls_deps::{
+    client::TlsStream,
+    rustls::{self, ClientConfig, OwnedTrustAnchor},
+    TlsConnector,
+};
 use std::convert::TryFrom;
 use std::io;
 use std::net::ToSocketAddrs;
 use std::sync::Arc;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpStream;
-use tokio_rustls::{
-    client::TlsStream,
-    rustls::{self, ClientConfig, OwnedTrustAnchor},
-    TlsConnector,
-};
 
 async fn get(
     config: Arc<ClientConfig>,

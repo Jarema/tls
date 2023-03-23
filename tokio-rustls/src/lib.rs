@@ -1,3 +1,7 @@
+//! This is a fork of [tokio-ruslts](https://crates.io/crates/tokio-rustls) created out of need
+//! for features merged into main, but not yet released.
+//! It can be treated as alpha/nightly.
+//!
 //! Asynchronous TLS/SSL streams for Tokio using [Rustls](https://github.com/rustls/rustls).
 //!
 //! # Why do I need to call `poll_flush`?

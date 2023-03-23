@@ -1,3 +1,4 @@
+use async_nats_tokio_rustls_deps::{LazyConfigAcceptor, TlsAcceptor, TlsConnector};
 use futures_util::future::TryFutureExt;
 use lazy_static::lazy_static;
 use rustls::{ClientConfig, OwnedTrustAnchor};
@@ -12,7 +13,6 @@ use std::{io, thread};
 use tokio::io::{copy, split, AsyncReadExt, AsyncWriteExt};
 use tokio::net::{TcpListener, TcpStream};
 use tokio::{runtime, time};
-use tokio_rustls::{LazyConfigAcceptor, TlsAcceptor, TlsConnector};
 
 const CERT: &str = include_str!("end.cert");
 const CHAIN: &[u8] = include_bytes!("end.chain");

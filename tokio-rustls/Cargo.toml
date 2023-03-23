@@ -1,13 +1,13 @@
 [package]
-name = "tokio-rustls"
-version = "0.23.4"
+name = "async-nats-tokio-rustls-deps"
+version = "0.24.0-ALPHA.1"
 authors = ["quininer kel <quininer@live.com>"]
 license = "MIT/Apache-2.0"
 repository = "https://github.com/tokio-rs/tls"
 homepage = "https://github.com/tokio-rs/tls"
 documentation = "https://docs.rs/tokio-rustls"
 readme = "README.md"
-description = "Asynchronous TLS/SSL streams for Tokio using Rustls."
+description = "Fork of Asynchronous TLS/SSL streams for Tokio using Rustls."
 categories = ["asynchronous", "cryptography", "network-programming"]
 edition = "2018"
 rust-version = "1.56"

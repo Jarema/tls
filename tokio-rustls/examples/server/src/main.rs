@@ -1,4 +1,6 @@
 use argh::FromArgs;
+use async_nats_tokio_rustls_deps::TlsAcceptor;
+use async_nats_tokio_rustls_deps::{self, Certificate, PrivateKey};
 use rustls_pemfile::{certs, rsa_private_keys};
 use std::fs::File;
 use std::io::{self, BufReader};
@@ -7,8 +9,6 @@ use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use tokio::io::{copy, sink, split, AsyncWriteExt};
 use tokio::net::TcpListener;
-use tokio_rustls::rustls::{self, Certificate, PrivateKey};
-use tokio_rustls::TlsAcceptor;
 
 /// Tokio Rustls server example
 #[derive(FromArgs)]

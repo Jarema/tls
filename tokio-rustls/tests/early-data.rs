@@ -1,5 +1,10 @@
 #![cfg(feature = "early-data")]
 
+use async_nats_tokio_rustls_deps::{
+    client::TlsStream,
+    rustls::{self, ClientConfig, OwnedTrustAnchor},
+    TlsConnector,
+};
 use futures_util::{future, future::Future, ready};
 use rustls::RootCertStore;
 use std::convert::TryFrom;
@@ -15,11 +20,6 @@ use tokio::io::{split, AsyncRead, AsyncWriteExt, ReadBuf};
 use tokio::net::TcpStream;
 use tokio::sync::oneshot;
 use tokio::time::sleep;
-use tokio_rustls::{
-    client::TlsStream,
-    rustls::{self, ClientConfig, OwnedTrustAnchor},
-    TlsConnector,
-};
 
 struct Read1<T>(T);
 

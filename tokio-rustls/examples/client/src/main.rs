@@ -1,4 +1,6 @@
 use argh::FromArgs;
+use async_nats_tokio_rustls_deps::{self, OwnedTrustAnchor};
+use async_nats_tokio_rustls_deps::{webpki, TlsConnector};
 use std::convert::TryFrom;
 use std::fs::File;
 use std::io;
@@ -8,8 +10,6 @@ use std::path::PathBuf;
 use std::sync::Arc;
 use tokio::io::{copy, split, stdin as tokio_stdin, stdout as tokio_stdout, AsyncWriteExt};
 use tokio::net::TcpStream;
-use tokio_rustls::rustls::{self, OwnedTrustAnchor};
-use tokio_rustls::{webpki, TlsConnector};
 
 /// Tokio Rustls client example
 #[derive(FromArgs)]
